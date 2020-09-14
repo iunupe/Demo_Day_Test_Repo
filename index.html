@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>COVID-19 Analysis Using Machine Learning</title>
+
+    <!--
+
+Breezed Template
+
+https://templatemo.com/tm-543-breezed
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-breezed.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+
+
+                        <!-- ***** Logo Start ***** -->
+                        <!-- <a href="index.html" class="logo">
+                            .BREEZED
+                        </a> -->
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#testimonials">Our Team</a></li>
+                            <!-- <li class="scroll-to-section"><a href="#projects">Projects</a></li> -->
+                            <li class="submenu">
+                                <a href="javascript:;">Analysis</a>
+                                <ul>
+                                    <li><a href="covid_blood_panel.html" target="_blank">Full Blood Panel</a>
+                                    </li>
+                                    <li><a href="covid_diet.html" target="_blank">Food Habits</a></li>
+                                    <!-- <li><a href="">FAQ's</a></li> -->
+                                    <!-- <li><a href="">Blog</a></li> -->
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
+                            <!-- <div class="search-icon">
+                                <a href="#search"><i class="fa fa-search"></i></a>
+                            </div> -->
+                        </ul>
+                        <!-- <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a> -->
+
+
+
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Search Area ***** -->
+    <!-- <div id="search">
+        <button type="button" class="close">×</button>
+        <form id="contact" action="#" method="get">
+            <fieldset>
+                <input type="search" name="q" placeholder="SEARCH KEYWORD(s)" aria-label="Search through site content">
+            </fieldset>
+            <fieldset>
+                <button type="submit" class="main-button">Search</button>
+            </fieldset>
+        </form>
+    </div> -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="assets/images/slide-03.jpg" alt="">
+                    <div class="text-content">
+
+
+
+
+
+
+                        <!-- INSERT PROJECT 2 CHARTS HERE (BELOW) -->
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="well">
+                                    <h5>Chicago Zip Code:</h5>
+
+                                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <br>
+                                        <h6 class="panel-title">COVID-19 Info</h6>
+                                        <br>
+                                    </div>
+                                    <div id="sample-metadata" class="panel-body"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <h5>Postive Tested Rate And Death Rate</h5>
+                                <div id="bubble" width="800px" height="650px"></div>
+                            </div>
+                            <div class="col-md-5">
+                                <h5>COVID-19 Progression in Chicago</h5>
+                                <div id="bar" width="800px" height="650px">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <h5>Race Distribution by Zipcode</h5>
+                                <div id="gauge">
+                                    <canvas id="doughnut-chart" width="400" height="450"></canvas>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Chicago Testing Sites</h5>
+                                <div id="marker-map">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h5>Chicago Positive Cases Concentration</h5>
+                                <div id="heat-map" width="350px" height="350px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <h3>COVID-19 ANALYSIS - QUESTION #1</h3>
+                        <h5>Can you predict the severity of COVID-19 from a full blood panel?</h5>
+                        <div class="Question-Header">
+                            <div class="question-header-text">
+                                <p>Since the pandemic of COVID-19, the prediction of the disease severeness is a
+                                    challenge to the whole world. Because early symptoms of COVID-19 infection overlap
+                                    with other common respiratory diseases, we decided to use a full blood panel to
+                                    predict the disease prognosis. We used machine learning models and statistic tests
+                                    to figure out the correlation of full blood counts with the severeness of the
+                                    disease, which might enable doctors to rapidly predict the severeness of COVID-19
+                                    infection, therefore adjust the treatment strategies.</p>
+                            </div>
+                        </div> -->
+                <!-- <a href="covid_blood_panel.html" target="_blank" class="main-stroked-button">Full Blood
+                                Panel
+                                Analysis</a>
+                            <a href="https://www.kaggle.com/einsteindata4u/covid19" target="_blank"
+                                class="main-filled-button">Data Sources</a> -->
+
+                <!-- // Item -->
+                <!-- Item -->
+
+                <!-- COMMENT OUT ALL OF SLIDER PAGE 2 (BELOW) -->
+
+                <!-- <div class="item">
+                <div class="img-fill">
+                    <img src="assets/images/slide-02.jpg" alt="">
+                    <div class="text-content">
+
+
+
+                        <h3>COVID-19 ANALYSIS - QUESTION #2</h3>
+                        <h5>Can you predict the number of COVID-19 deaths by food habits?</h5>
+                        <div class="Question-Header">
+                            <div class="question-header-text">
+                                <p>It has been reported that the severeness of COVID-19 infection largely depends on the
+                                    physical condition of each individual.
+                                    We would like to know the impact of diet on disease progression.
+                                    The objective of this model is to predict the percentage of deaths (per country)
+                                    related to the COVID-19 pandemic,
+                                    taking into account statistical data about the food habits of the population (food
+                                    types: animal, eggs, fish, beer, etc.).
+                                    From the analysis of the model, we can conclude which types of food have a bigger
+                                    impact in the final outcome.</p>
+                            </div>
+                        </div>
+                        <a href="covid_diet.html" target="_blank" class="main-stroked-button">Food Habits Analysis</a>
+                        <a href="https://www.kaggle.com/mariaren/covid19-healthy-diet-dataset" target="_blank"
+                            class="main-filled-button">Data Source #1</a>
+                        <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series"
+                            target="_blank" class="main-filled-button">Data Source #2</a>
+                        <a href="https://public.tableau.com/profile/anuradha.guha#!/vizhome/COVID-19-Project3/Story2?publish=yes"
+                            target="_blank" class="main-stroked-button">Tableau Dashboard</a>
+                    </div>
+                </div>
+            </div> -->
+                <!-- // Item -->
+                <!-- Item -->
+                <!-- <div class="item">
+                <div class="img-fill">
+                    <img src="assets/images/slide-03.jpg" alt="">
+                    <div class="text-content">
+                        <h3>High Performance</h3>
+                        <h5>Robust and Speedy</h5>
+                        <a href="#" class="main-stroked-button">Learn More</a>
+                        <a href="#" class="main-filled-button">Get It Now</a>
+                    </div>
+                </div>
+            </div> -->
+                <!-- // Item -->
+            </div>
+        </div>
+        <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+        <!-- ***** Main Banner Area End ***** -->
+
+        <!-- ***** Our Team Area Starts ***** -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <div class="left-text-content">
+                            <div class="section-heading">
+                                <h6>Coding</h6>
+                                <!-- <h2>Collaboration across multiple technologies</h2> -->
+                                <h2>Multiple technologies used</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="service-item">
+                                        <img src="assets/images/icons8-python-48.png" alt="">
+                                        <h4>Python Pandas</h4>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-6 col-sm-6">
+                                    <div class="service-item">
+                                        <img src="assets/images/icons8-tableau-software-48.png" alt="">
+                                        <h4>Tableau</h4>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="service-item">
+                                        <img src="assets/images/icons8-github-64.png" alt="">
+                                        <h4>GitHub Pages</h4>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-6 col-sm-6">
+                                    <div class="service-item">
+                                        <img src="assets/images/icons8-amazon-web-services-48.png" alt="">
+                                        <h4>Amazon Web Services</h4>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="service-item">
+                                        <img src="assets/images/icons8-html-5-48.png" alt="">
+                                        <h4>HTML/CSS/Bootstrap</h4>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-6 col-sm-6">
+                                    <div class="service-item">
+                                        <img src="assets/images/r2d2_icon_48x48.png" alt="">
+                                        <h4>Machine Learning</h4>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-md-12">
+                                <a href="#" class="main-button-icon">
+                                    Learn More <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <div class="right-text-content">
+
+                            <!-- Insert team pic here -->
+
+                            <!-- <div class="item">
+                            <a href="assets/images/project3_team_pic.jpg" data-lightbox="image-1"
+                                data-title="Our Team"><img src="assets/images/project3_team_pic.jpg" alt=""></a>
+                        </div> -->
+
+
+                            <!-- <p><a rel="nofollow noopener" href="https://templatemo.com/tm-543-breezed"
+                                target="_parent">Breezed HTML Template</a> -->
+
+                            PYTHON PANDAS: <p>Used to wrangle data...</p>
+
+                            <!-- TABLEAU: <p>Used for visualizations...</p> -->
+
+                            GITHUB PAGES: <p>Used for web hosting...</p>
+
+                            <!-- AMAZON WEB SERVICES: <p>Used for storing data...</p> -->
+
+                            HTML/CSS/BOOTSTRAP: <p>Used for building webpage...</p>
+
+                            <!-- MACHINE LEARNING: <p>Used to predict outcomes...</p> -->
+
+                            <!-- <br><br>This is a Bootstrap v4.3.1 CSS layout. Do you like it? You can feel free to <a
+                                rel="nofollow noopener" href="https://templatemo.com/contact" target="_parent">talk to
+                                us if you have anything.</a> -->
+
+                            <!-- </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** About Area Ends ***** -->
+
+        <!-- ***** Features Big Item Start ***** -->
+        <!-- <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img src="assets/images/features-icon-1.png" alt="">
+                        </div>
+                        <div class="features-content">
+                            <h4>Step 1</h4>
+                            <p>Proin euismod sem ut diam ultricies, ut faucibus velit ultricies. Nam eu turpis quam.
+                                Duis ac condimentum eros.</p>
+                            <a href="#" class="text-button-icon">
+                                Learn More <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img src="assets/images/features-icon-1.png" alt="">
+                        </div>
+                        <div class="features-content">
+                            <h4>Step 2</h4>
+                            <p>Proin euismod sem ut diam ultricies, ut faucibus velit ultricies. Nam eu turpis quam.
+                                Duis ac condimentum eros.</p>
+                            <a href="#" class="text-button-icon">
+                                Learn More <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img src="assets/images/features-icon-1.png" alt="">
+                        </div>
+                        <div class="features-content">
+                            <h4>Step 3</h4>
+                            <p>Proin euismod sem ut diam ultricies, ut faucibus velit ultricies. Nam eu turpis quam.
+                                Duis ac condimentum eros.</p>
+                            <a href="#" class="text-button-icon">
+                                Learn More <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+        <!-- ***** Features Big Item End ***** -->
+
+        <!-- ***** Features Big Item Start ***** -->
+        <!-- <section class="section" id="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading">
+                        <h6>Subscribe Newsletters</h6>
+                        <h2>Don’t miss this chance!</h2>
+                    </div>
+                    <div class="subscribe-content">
+                        <p>Vivamus suscipit blandit nibh, in cursus mi. Proin vel blandit metus, et auctor elit. Vivamus
+                            tincidunt tristique convallis. Ut nec odio vel arcu euismod semper nec ac sem.</p>
+                        <div class="subscribe-form">
+                            <form id="subscribe-now" action="" method="get">
+                                <div class="row">
+                                    <div class="col-md-8 col-sm-12">
+                                        <fieldset>
+                                            <input name="email" type="text" id="email" placeholder="Enter your email..."
+                                                required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="main-button">Subscribe
+                                                Now</button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+        <!-- ***** Features Big Item End ***** -->
+
+
+        <!-- ***** Projects Area Starts ***** -->
+        <!-- <section class="section" id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="section-heading">
+                        <h6>Our Projects</h6>
+                        <h2>Some of our latest projects</h2>
+                    </div>
+                    <div class="filters">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".des">Web Design</li>
+                            <li data-filter=".dev">Web Development</li>
+                            <li data-filter=".gra">Graphics</li>
+                            <li data-filter=".tsh">Artworks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="filters-content">
+                        <div class="row grid">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all des">
+                                <div class="item">
+                                    <a href="assets/images/project-big-item-01.jpg" data-lightbox="image-1"
+                                        data-title="Our Projects"><img src="assets/images/project-item-01.jpg"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all dev">
+                                <div class="item">
+                                    <a href="assets/images/project-big-item-02.jpg" data-lightbox="image-1"
+                                        data-title="Our Projects"><img src="assets/images/project-item-02.jpg"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all gra">
+                                <div class="item">
+                                    <a href="assets/images/project-big-item-03.jpg" data-lightbox="image-1"
+                                        data-title="Our Projects"><img src="assets/images/project-item-03.jpg"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all tsh">
+                                <div class="item">
+                                    <a href="assets/images/project-big-item-04.jpg" data-lightbox="image-1"
+                                        data-title="Our Projects"><img src="assets/images/project-item-04.jpg"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all dev">
+                                <div class="item">
+                                    <a href="assets/images/project-big-item-05.jpg" data-lightbox="image-1"
+                                        data-title="Our Projects"><img src="assets/images/project-item-05.jpg"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all des">
+                                <div class="item">
+                                    <a href="assets/images/project-big-item-06.jpg" data-lightbox="image-1"
+                                        data-title="Our Projects"><img src="assets/images/project-item-06.jpg"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+        <!-- ***** Projects Area Ends ***** -->
+
+        <!-- ***** Testimonials Starts ***** -->
+        <section class="section" id="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-heading">
+                            <h6>Introducing</h6>
+                            <h2>Our Team</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                        data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item author-item">
+                                <div class="member-thumb">
+                                    <img src="assets/images/Group3_Pic_Alejandro_Coronel_370x420.jpg" alt="">
+                                    <div class="hover-effect">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+                                                <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                                                <li><a href="https://www.linkedin.com/in/alejcoronel/"
+                                                        target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                                <!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Alejandro Coronel</h4>
+                                <span>Northwestern Univ | Data Science Bootcamp
+                                    <br>
+                                    <!-- Project Focus: Tableau | Heroku</span> -->
+                            </div>
+                            <div class="item author-item">
+                                <div class="member-thumb">
+                                    <img src="assets/images/Group3_Pic_Anu_Guha_370x420.jpg" alt="">
+                                    <div class="hover-effect">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+                                                <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                                                <li><a href="https://www.linkedin.com/in/anuradha-guha-220a204/"
+                                                        target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                                <!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Anuradha Guha</h4>
+                                <span>Northwestern Univ | Data Science Bootcamp
+                                    <br>
+                                    <!-- Project Focus: Machine Learning | Pandas -->
+                                </span>
+                            </div>
+                            <div class="item author-item">
+                                <div class="member-thumb">
+                                    <img src="assets/images/Group3_Pic_Korbin_Mays_370x420.jpg" alt="">
+                                    <div class="hover-effect">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+                                                <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                                                <li><a href="http://www.linkedin.com/in/korbin-mays-4361999"
+                                                        target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                                <!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Korbin Mays</h4>
+                                <span>Northwestern Univ | Data Science Bootcamp
+                                    <br>
+                                    <!-- Project Focus: HTML | CSS | JavaScript -->
+                                </span>
+                            </div>
+                            <div class="item author-item">
+                                <div class="member-thumb">
+                                    <img src="assets/images/Group3_Pic_Yalu_Zhou_370x420.jpg" alt="">
+                                    <div class="hover-effect">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+                                                <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                                                <li><a href="https://www.linkedin.com/in/yalu-zhou/" target="_blank"><i
+                                                            class="fa fa-linkedin"></i></a></li>
+                                                <!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Yalu Zhou</h4>
+                                <span>Northwestern Univ | Data Science Bootcamp
+                                    <br>
+                                    <!-- Project Focus: Machine Learning | GitHub -->
+                                </span>
+                            </div>
+                            <!-- <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="assets/images/member-item-05.jpg" alt="">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>.04 Catherine Phyu</h4>
+                            <span>Co Founder</span>
+                        </div> -->
+                            <!-- <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="assets/images/member-item-03.jpg" alt="">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>.05 Shao Lynn</h4>
+                            <span>Chief Marketing</span>
+                        </div> -->
+
+                            <!-- <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="assets/images/member-item-04.jpg" alt="">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>.06 Emma Honey</h4>
+                            <span>Digital Influencer</span>
+                        </div> -->
+
+                            <!-- <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="assets/images/member-item-06.jpg" alt="">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>.07 Oliva Sofie</h4>
+                            <span>Website Analyst</span>
+                        </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Testimonials Ends ***** -->
+
+        <!-- ***** Contact Us Area Starts ***** -->
+        <section class="section" id="contact-us">
+
+            <section class="tabs">
+                <div class="container">
+                    <div id="tab-1" class="tab-item tab-border">
+                        <i class="fa fa-github fa-2x"></i>
+                        <p class="hide-sm"><a href="http://github.com/alejcoronel" target="_blank">Alejandro
+                                Coronel</a>
+                            <!-- <li class="scroll-to-section"><a href="#contact-us">Alejandro Coronel</a></li> -->
+                        </p>
+                    </div>
+                    <div id="tab-2" class="tab-item">
+                        <i class="fa fa-github fa-2x"></i>
+                        <p class="hide-sm"><a href="http://github.com/AnuinChicago" target="_blank">Anuradha
+                                Guha</a>
+                            <!-- <li class="scroll-to-section"><a href="#contact-us">Anuradha Guha</a></li> -->
+                        </p>
+                    </div>
+                    <div id="tab-3" class="tab-item">
+                        <i class="fa fa-github fa-2x"></i>
+                        <p class="hide-sm"><a href="http://github.com/iunupe" target="_blank">Korbin
+                                Mays</a>
+                            <!-- <li class="scroll-to-section"><a href="#contact-us">Korbin Mays</a></li> -->
+                        </p>
+                    </div>
+                    <div id="tab-4" class="tab-item">
+                        <i class="fa fa-github fa-2x"></i>
+                        <p class="hide-sm"><a href="http://github.com/YaluZhou" target="_blank">Yalu
+                                Zhou</a>
+                            <!-- <li class="scroll-to-section"><a href="#contact-us">Yalu Zhou</a></li> -->
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        <div class="left-text-content">
+                            <div class="section-heading">
+                                <h6>Contact Us</h6>
+                                <h2>Reach out to us on LinkedIn!</h2>
+                            </div>
+                            <ul class="contact-info">
+                                <li><img src="assets/images/LI-In-Bug_small.png" alt=""><a
+                                        href="https://www.linkedin.com/in/alejcoronel/" target="_blank">Alejandro
+                                        Coronel</a></li>
+                                <li><img src="assets/images/LI-In-Bug_small.png" alt=""><a
+                                        href="https://www.linkedin.com/in/anuradha-guha-220a204/"
+                                        target="_blank">Anuradha
+                                        Guha</a></li>
+                                <li><img src="assets/images/LI-In-Bug_small.png" alt=""><a
+                                        href="http://www.linkedin.com/in/korbin-mays-4361999" target="_blank">Korbin
+                                        Mays</a></li>
+                                <li><img src="assets/images/LI-In-Bug_small.png" alt=""><a
+                                        href="https://www.linkedin.com/in/yalu-zhou/" target="_blank">Yalu Zhou</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-xs-12">
+                        <div class="contact-form">
+                            <form id="contact" action="" method="get">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <fieldset>
+                                            <input name="name" type="text" id="name" placeholder="Your Name *"
+                                                required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <fieldset>
+                                            <input name="phone" type="text" id="phone" placeholder="Your Phone"
+                                                required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <fieldset>
+                                            <input name="email" type="email" id="email" placeholder="Your Email *"
+                                                required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <fieldset>
+                                            <input name="subject" type="text" id="subject" placeholder="Subject">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <textarea name="message" rows="6" id="message" placeholder="Message"
+                                                required=""></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="main-button-icon">Send
+                                                Message
+                                                Now
+                                                <i class="fa fa-arrow-right"></i></button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Contact Us Area Ends ***** -->
+
+        <!-- ***** Footer Start ***** -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="left-text-content">
+                            <p>Copyright &copy; 2020 Breezed Co., Ltd.
+
+                                <!-- - Design: <a rel="nofollow noopener" href="https://templatemo.com">TemplateMo</a></p> -->
+                                - Design: <a rel="nofollow noopener" href="#">TemplateMo</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="right-text-content">
+                            <ul class="social-icons">
+                                <li>
+                                    <p>Follow Us</p>
+                                </li>
+                                <li><a rel="nofollow" href="https://facebook.com/git.ready.12" target="_blank"><i
+                                            class="fa fa-facebook"></i></a>
+                                </li>
+                                <!-- <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-dribbble"></i></a>
+                            </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- jQuery -->
+        <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="assets/js/popper.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+
+        <!-- Plugins -->
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/imgfix.min.js"></script>
+        <script src="assets/js/slick.js"></script>
+        <script src="assets/js/lightbox.js"></script>
+        <script src="assets/js/isotope.js"></script>
+
+        <!-- Global Init -->
+        <script src="assets/js/custom.js"></script>
+
+        <script>
+            $(function () {
+                var selectedClass = "";
+                $("p").click(function () {
+                    selectedClass = $(this).attr("data-rel");
+                    $("#portfolio").fadeTo(50, 0.1);
+                    $("#portfolio div").not("." + selectedClass).fadeOut();
+                    setTimeout(function () {
+                        $("." + selectedClass).fadeIn();
+                        $("#portfolio").fadeTo(50, 1);
+                    }, 500);
+
+                });
+            });
+        </script>
+
+</body>
+
+</html>

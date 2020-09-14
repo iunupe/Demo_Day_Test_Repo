@@ -1,0 +1,82 @@
+
+
+.panel-primary{
+    border-color:#dddddd;
+    border:2px  black;
+}
+
+#heat-map{
+    
+    width:850px;
+    height:550px;
+} 
+
+
+#marker-map{
+    width:850px;
+    height:550px;
+}
+#bubble{
+    width: :600px;
+    height: 400px;
+    align:center;
+}
+
+#bar{
+    width: :600px;
+    height: 400px;
+}
+
+img {
+    width: 100%;
+}
+
+#sample-metadata{
+    font-size: 0.75rem
+}
+body{
+    background-color:rgb(210, 240, 223);
+    
+}
+
+.jumbotron{
+    background-image: url("https://images.unsplash.com/photo-1524168272322-bf73616d9cb5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+    background-position: center;
+}
+
+/* Tabs */
+.tabs {
+    background: var(--text-background-color);
+    /* background: var(--dark-color); */
+    padding-top: 0.5rem;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.tabs .container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tabs p {
+    font-size: 1rem;
+    padding-top: 0.1rem;
+}
+
+.tabs .container>div {
+    padding: 0.1rem 0;
+}
+
+.tabs .container>div:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+

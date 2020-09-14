@@ -1,0 +1,517 @@
+:root {
+    --primary-color: #e50914;
+    --dark-color: #141414;
+    --text-background-color: rgba(1, 20, 73, 0.89);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #000;
+    color: #999;
+    #background{
+        opacity:0.4;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #fff;
+}
+
+/* a {
+    color: #fff;
+    text-decoration: none;
+} */
+
+p {
+    margin: 0.5rem 0;
+    color: #fff;
+}
+
+img {
+    width: 100%;
+}
+
+/* Note: 93vh is "viewport height" */
+.showcase {
+    width: 100%;
+    height: 93vh;
+    position: relative;
+    background: url('../images/lance-anderson-8Po0ng99yO4-unsplash-chicago-bean.jpg') no-repeat center center/cover;
+}
+
+.showcase::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(24, 40, 94, 0.358);
+    box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+.showcase-top {
+    position: relative;
+    height: 80px;
+    z-index: 2;
+}
+
+.showcase-top img {
+    /* background-color: #122f5761; */
+    background-color: #040c1861;
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding-top: 10px; */
+    padding-top: 2rem;
+}
+
+.showcase-top img:hover {
+    opacity: 0.3;
+}
+
+/* .showcase-top i {
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+} */
+
+.showcase-top a {
+    color: yellow;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.showcase-top h1 {
+    position: absolute;
+    top: 5%;
+    left: 20px;
+    /* transform: translate(-50%, -50%); */
+}
+
+.showcase-top p {
+    position: relative;
+    top: 5%;
+    left: 20px;
+    /* transform: translate(-50%, -50%); */
+}
+
+.showcase-top .title {
+    position: absolute;
+    left: 1rem;
+}
+
+.showcase-top .title:hover {
+    opacity: 0.3;
+    cursor: crosshair;
+}
+
+.showcase-top .subtitle {
+    position: absolute;
+    color: yellow;
+    font-weight: normal;
+    top: 3.5rem;
+    left: 25px;
+}
+
+/* CHARTS & GRAPHS          ------------------------------ */
+
+.charts {
+    /* background: rgba(11, 24, 65, 0.89); */
+    /* background: var(--dark-color); */
+    /* border-radius: 1px solid #3d3d3d; */
+    border-radius: 1em solid yellow;
+    padding-top: 0.5rem;
+}
+
+.charts-container {
+    display: grid;
+    grid-gap: 5px;
+    /* grid-template: repeat(20px, auto) / repeat(3, 1fr); */
+    /* grid-template-columns: 1fr 1fr 10fr; */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 200px 40px;
+    /* grid-column-gap: 10px; */
+    /* grid-row-gap: 20px; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* text-align: center; */
+    /* padding-top: 10px; */
+}
+
+.charts p {
+    font-size: 1rem;
+    padding-top: 0.1rem;
+}
+
+.charts .charts-zipcode>div {
+    padding: 10px 0;
+}
+
+.charts .charts-container>div:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+
+/* .showcase-bottom {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: minmax(50px 50px auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 3px;
+    position: absolute;
+    top: 10rem;
+    left: 20px;
+    right: 20px;
+    height: 50vh;
+}
+
+.showcase-bottom>div {
+    color: greenyellow;
+    background: rgba(11, 24, 65, 0.89);
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.showcase-bottom:hover {
+    opacity: 0.2;
+} */
+
+
+/* Tabs */
+.tabs {
+    background: var(--text-background-color);
+    /* background: var(--dark-color); */
+    padding-top: 0.5rem;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.tabs .container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tabs p {
+    font-size: 1rem;
+    padding-top: 0.1rem;
+}
+
+.tabs .container>div {
+    padding: 0.1rem 0;
+}
+
+.tabs .container>div:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+/* .tab-border {
+    border-bottom: var(--primary-color) 4px solid;
+} */
+
+/* Tab Content */
+/* .tab-content #tab-1-content .tab-1content-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+
+
+/* Container */
+.container {
+    max-width: 70%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+/* Text Styles */
+.text-xl {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.text-lg {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-light {
+    color: yellowgreen;
+}
+
+
+
+
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: yellow;
+    padding: 0.4rem 1.3rem;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-rounded {
+    border-radius: 5px;
+    color: yellow;
+}
+
+.btn-xl {
+    font-size: 2rem;
+    padding: 1.5rem 2.1rem;
+    text-transform: uppercase;
+}
+
+.btn-lg {
+    font-size: 1rem;
+    padding: 0.8rem 1.3rem;
+    text-transform: uppercase;
+}
+
+/* CSS for later - Showcase center, font weight, alignment, etc... */
+/* Under .showcase-top a */
+
+/* .showcase-content {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 9rem;
+} */
+
+/* .showcase-content h1 {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 1.1;
+    margin: 0 0 2rem
+} */
+
+/* .showcase-content p {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 0 0 2rem;
+} */
+
+
+/* #nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+} */
+
+/* .navbar {
+    background-image: linear-gradient(to right, #070c0efe, #3b3d3ffe);
+    padding: 0 !important;
+} */
+
+/* .navbar-brand {
+    height: 20px;
+    padding-left: 20px;
+} */
+
+/* .navbar-brand2 {
+    color: #fff !important;
+    font-weight: 425;
+    font-size: var(--font-size-nav-link);
+    letter-spacing: 0.01rem;
+    text-shadow: none;
+    padding-right: 2rem;
+    height: 20px;
+    padding-right: 20px;
+} */
+
+/* .navbar-brand-covid-19-text {
+    font-weight: 425;
+    font-size: var(--font-size-nav-link);
+    letter-spacing: 0.01rem;
+    text-shadow: none;
+    padding-left: 2rem;
+    height: 20px;
+    padding-right: 20px;
+} */
+
+/* .desktop-navbar {
+    border: none;
+    text-shadow: none;
+    position: fixed;
+    z-index: 10000;
+    width: 100vw;
+    height: 7.5vh;
+    top: 0;
+    min-width: var(--minimum-screen-size);
+    flex-flow: nowrap;
+    padding-left: 20px;
+} */
+
+/* .navbar-brand img {
+    height: 20px;
+    padding-left: 20px;
+} */
+
+/* .navbar-brand-links {
+    color: #fff !important;
+    height: 12px;
+    padding-right: 20px;
+} */
+
+/* .navbar-nav li {
+    padding: 0 10px;
+} */
+
+/* .navbar-nav li a {
+    color: #fff !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+} */
+
+/* .fa-bars {
+    color: #fff;
+    font-size: 30px !important;
+} */
+
+/* .navbar-toggler {
+    outline: none !important;
+} */
+
+/* Banner Section */
+
+/* #banner { */
+/* background-image: linear-gradient(to right, #1794bafe, #1774d8fe); */
+/* color: #fff; */
+/* padding-top: 0.1%; */
+}
+
+/* .project-title {
+    font-size: 40px;
+    font-weight: 10;
+    margin-top: 10px;
+} */
+
+/* .play-btn {
+    width: 45px;
+    margin: 20px;
+
+} */
+
+/* #banner a {
+    color: #fff;
+    text-decoration: none;
+} */
+
+.states-dropdown-container {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+    font-family: var(--daily-stats-font-family);
+    font-size: var(--font-size-state-name);
+    max-width: 23%;
+    flex: 0 0 23%;
+    font-weight: 500;
+    border-radius: var(--drop-down-rounded-corners);
+    color: var(--nav-font-color);
+}
+
+
+
+/* BE SURE TO INCLUDE THE CSS RESET FOUND IN THE DEMO PAGE'S CSS
+
+/*------------------------------------*\
+    NAV
+\*------------------------------------ */
+/* .nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    float: left;
+    /* Clear floats */
+/* width: 100%; */
+/* Bring the nav above everything else--uncomment if needed. */
+/* position: relative; */
+/* z-index: 5; */
+
+}
+
+/* .nav li {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.nav a {
+    display: block;
+    padding: 5px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #fff;
+    background-color: #6b0c36;
+    text-decoration: underline;
+}
+
+/*--- CHARTS / GRAPHS ---*/
+
+/* #chart_div {
+    width: 1200px;
+} */
